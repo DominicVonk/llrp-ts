@@ -1,6 +1,6 @@
 {
   "name": "@dominicvonk/llrp-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "UHF Tag reader for connecting with RFID reader through LLRP. (LLRP UHF RFID Driver)",
   "main": "./dist/index.js",
   "types": "index.d.ts",
