@@ -1,5 +1,5 @@
 {
-  "name": "llrp-ts",
+  "name": "dominicvonk/llrp-ts",
   "version": "1.0.0",
   "description": "UHF Tag reader for connecting with RFID reader through LLRP. (LLRP UHF RFID Driver)",
   "main": "./dist/index.js",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@types/node-int64": "^0.4.29",
     "lodash": "^4.17.11",
-    "node-int64": "https://github.com/broofa/node-int64.git#0.4.0",
+    "node-int64": "0.4.0",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
