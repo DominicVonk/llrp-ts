@@ -1,6 +1,6 @@
 {
   "name": "@dominicvonk/llrp-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "UHF Tag reader for connecting with RFID reader through LLRP. (LLRP UHF RFID Driver)",
   "main": "./dist/index.js",
   "types": "index.d.ts",
@@ -11,9 +11,12 @@
     "tslint-fix": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json --fix",
     "test": "./node_modules/.bin/jest --coverage --forceExit --detectOpenHandles"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/YaroslavSl/llrp-ts.git"
+    "url": "git+ssh://git@github.com/DominicVonk/llrp-ts.git"
   },
   "dependencies": {
     "@types/node-int64": "^0.4.29",
