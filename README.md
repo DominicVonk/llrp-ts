@@ -1,4 +1,5 @@
 # llrp-ts
+
 Tag reader for connecting with RFID reader through LLRP(LLRP UHF RFID Driver for node.js/TypeScript)
 
 ==========
@@ -9,23 +10,23 @@ Nodejs module to read RFID tags by connecting to a RFID reader through LLRP prot
 
 ## Version history
 
-v.0.0.1 - version based on https://github.com/GeenenTijd/llrp-nodejs 
+v.0.0.1 - version based on https://github.com/GeenenTijd/llrp-nodejs
 
-v.0.0.2 - Code refactoring. Add Impinj Specific message for  AddRoSpec. Add close connection public method. Add parsing for AntennaID, PeakRSSI, LastSeenTimestampUTC.
+v.0.0.2 - Code refactoring. Add Impinj Specific message for AddRoSpec. Add close connection public method. Add parsing for AntennaID, PeakRSSI, LastSeenTimestampUTC.
 
 v.0.0.3 - Code refactoring. Add llrp message creator. Fixed bugs in endode.js. Add received EPC96 or EPC numbers. Add disableRFTransmitter and enableRFTransmitter methods.
 
 v.0.0.4 - Converted code to TypeScript. Add unit tests.
 
-v.0.0.5 - Add reading of TID number. 
+v.0.0.5 - Add reading of TID number.
 
-v.0.0.6 - Add configuration for antennas number.  
+v.0.0.6 - Add configuration for antennas number.
 
-v.0.0.7 - Add antenna power configuration.  
+v.0.0.7 - Add antenna power configuration.
 
 v.0.0.8 - Fix sending command when socket is closed.
 
-v.0.0.9 - Add radio transmitter on/off commands and events.  
+v.0.0.9 - Add radio transmitter on/off commands and events.
 
 ### Authors
 
@@ -41,7 +42,7 @@ yarn add llrp-ts
 
 You can provide a config object with the following values:
 
-ipaddress - IP of the RFID reader (default 192.168.0.30) 
+ipaddress - IP of the RFID reader (default 192.168.0.30)
 
 port - port of the RFID reader (default 5084)
 
