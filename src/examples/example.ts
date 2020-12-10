@@ -1,6 +1,6 @@
-import { LLRP, RfidReaderEvent } from "./index";
+import { LLRP, RfidReaderEvent } from "../index";
 
-import { ReaderConfig, TagInformation } from "./interfaces/llrp";
+import { ReaderConfig, TagInformation } from "../interfaces/llrp";
 
 // reader tcp/ip config
 const config: ReaderConfig = {
