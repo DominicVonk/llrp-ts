@@ -21,7 +21,7 @@ jobs:
   build:
     needs: release
     runs-on: ubuntu-latest
-    if: ${{ needs.release.outputs.released != 'true' }}
+    if: ${{ needs.release.outputs.released == 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -35,7 +35,7 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ needs.build.outputs.released != 'true' }}
+    if: ${{ needs.build.outputs.released == 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -50,7 +50,7 @@ jobs:
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ needs.build.outputs.released != 'true' }}
+    if: ${{ needs.build.outputs.released == 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
