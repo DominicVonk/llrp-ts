@@ -42,8 +42,8 @@ export class LLRP extends EventEmitter implements LlrpReader {
   private radioOperationConfig: RadioOperationConfig = <RadioOperationConfig>{};
   private enableTransmitter: boolean = true;
 
-  private socket: net.Socket = new net.Socket();
-  private client: net.Socket = null;
+  public socket: net.Socket = new net.Socket();
+  public client: net.Socket = null;
   public connected: boolean = false;
   private lastLlrpStatusCode: number;
 
