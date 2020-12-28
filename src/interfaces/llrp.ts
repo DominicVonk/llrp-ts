@@ -31,7 +31,7 @@ export interface RospecParameters {
   inventorySearchMode: number; // 1 - Single target (impinj custom parameter)
 }
 
-export interface RadioOperationConfig extends RospecParameters {}
+export interface RadioOperationConfig extends RospecParameters { }
 
 export interface ReaderConfig {
   ipaddress: string;
@@ -40,6 +40,7 @@ export interface ReaderConfig {
   isReaderConfigSet?: boolean;
   isStartROSpecSent?: boolean;
   isReaderConfigReset?: boolean;
+  timeout?: number
 }
 
 export interface LlrpReader {

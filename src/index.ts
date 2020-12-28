@@ -41,6 +41,7 @@ export class LLRP extends EventEmitter implements LlrpReader {
   private sendEnableRospecOnceMore: boolean = true;
   private radioOperationConfig: RadioOperationConfig = <RadioOperationConfig>{};
   private enableTransmitter: boolean = true;
+  private timeout: number = 60000;
 
   public socket: net.Socket = new net.Socket();
   public client: net.Socket = null;
@@ -59,6 +60,7 @@ export class LLRP extends EventEmitter implements LlrpReader {
     this.isReaderConfigSet = config.isReaderConfigSet || this.isReaderConfigSet;
     this.isStartROSpecSent = config.isStartROSpecSent || this.isStartROSpecSent;
     this.isReaderConfigReset = config.isReaderConfigReset || this.isReaderConfigReset;
+    this.timeout = config.timeout || this.timeout;
   }
 
   public connect(): void {
@@ -66,7 +68,7 @@ export class LLRP extends EventEmitter implements LlrpReader {
     this.enableTransmitter = true;
 
     // timeout after 60 seconds.
-    this.socket.setTimeout(60000, () => {
+    this.socket.setTimeout(this.timeout, () => {
       if (this.connected) {
         this.log("Connection timeout");
         process.nextTick(() => {
