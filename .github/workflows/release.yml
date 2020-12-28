@@ -16,12 +16,12 @@ jobs:
       - name: Release
         uses: justincy/github-action-npm-release@2.0.2
         id: release
-      - name: Print release output
-        if: ${{ steps.release.outputs.released != 'true' }}
-        run: exit 1
+    outputs:
+      released: ${{ steps.release.outputs.released }}
   build:
     needs: release
     runs-on: ubuntu-latest
+    if: ${{ needs.release.outputs.released != 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -29,10 +29,13 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm test
+    outputs:
+      released: ${{ needs.release.outputs.released }}
 
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ needs.build.outputs.released != 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -47,6 +50,7 @@ jobs:
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ needs.build.outputs.released != 'true' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
