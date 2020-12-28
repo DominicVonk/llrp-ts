@@ -1,6 +1,6 @@
 module.exports = {
   globals: {
-    "<rootDir>/node_modules/ts-jest": {
+    "ts-jest": {
       tsconfig: "tsconfig.json",
       diagnostics: {
         pathRegex: /\.(spec|test)\.ts$/,
@@ -9,9 +9,8 @@ module.exports = {
   },
   moduleFileExtensions: ["ts", "js", "json"],
   transform: {
-    "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest",
+    "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
   },
-  rootDir: ".",
   testMatch: ["**/test/**/*.test.(ts|js)"],
   testEnvironment: "node",
 };
