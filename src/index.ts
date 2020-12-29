@@ -189,7 +189,7 @@ export class LLRP extends EventEmitter implements LlrpReader {
             break;
 
           case MessagesType.ADD_ROSPEC_RESPONSE:
-            this.sendEnableRospec(true);
+            this.sendEnableRospec(false);
             break;
 
           case MessagesType.ENABLE_ROSPEC_RESPONSE:
